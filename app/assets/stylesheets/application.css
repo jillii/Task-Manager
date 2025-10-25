@@ -180,3 +180,22 @@ form.button_to {
 .card:hover .action-wrapper {
     transform: translateY(-100%);
 }
+
+/******************************
+*
+*
+* Media Queries
+*
+*
+*******************************/
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 560px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
