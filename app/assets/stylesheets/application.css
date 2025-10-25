@@ -49,7 +49,7 @@ p {
 *
 *
 *******************************/
-a, .button_to button, input[type=submit] {
+a, button, input[type=submit] {
     appearance: none;
     display: inline-block;
     align-self: flex-start;
@@ -64,11 +64,22 @@ a, .button_to button, input[type=submit] {
     cursor: pointer;
     transition: background-color .2s;
 }
-:is(a, .button_to button, input[type=submit]):hover {
+:is(a, button, input[type=submit]):not(.btn-icon):hover {
     background-color: #e6e6e6;
 }
-:is(a, .button_to button, input[type=submit]):active {
+:is(a, button, input[type=submit]):not(.btn-icon):active {
     background-color: #d8d8d8;
+}
+
+.btn-icon {
+    padding: 0;
+    border: none;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+.btn-icon:hover svg {
+    fill: blue;
 }
 /******************************
 *
