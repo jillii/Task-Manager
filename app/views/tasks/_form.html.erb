@@ -1,7 +1,7 @@
 <%= form_with model: @task, class: 'form-default' do |form| %>
     <div class="input">
         <%= form.label :title %>
-        <%= form.text_field :title %>
+        <%= form.text_field :title, required: true %>
     </div>
     <div class="input">
         <%= form.label :detail %>

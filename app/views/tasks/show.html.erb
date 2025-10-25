@@ -2,7 +2,9 @@
     <div class="site-container">
         <%= link_to 'View all', root_path %>
         <h1><%= @task.title %></h1>
-        <p><%= @task.detail %></p>
+        <% if @task.detail.present? %>
+            <p><%= @task.detail %></p>
+        <% end %>
         <%= render 'actions', task: @task %>
     </div>
 </section>
