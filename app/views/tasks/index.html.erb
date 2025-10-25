@@ -9,11 +9,7 @@
                         <% if task.title %>
                             <h2><%= task.title %></h2>
                         <% end %>
-                        <div class="actions">
-                            <%= link_to 'View', task_path(task) %>
-                            <%= link_to 'Edit', edit_task_path(task) %>
-                            <%= button_to 'Delete', task_path(task), method: :delete %>
-                        </div>
+                        <%= render 'actions', task: task %>
                     </div>
                 <% end %>
             </div>
