@@ -1,6 +1,6 @@
 <section>
     <div class="site-container">
-        <%= link_to 'View all', tasks_path %>
+        <%= link_to 'View all', root_path %>
         <h1><%= @task.title %></h1>
         <p><%= @task.detail %></p>
         <%= render 'actions', task: @task %>

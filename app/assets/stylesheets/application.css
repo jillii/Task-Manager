@@ -9,6 +9,12 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+ :root {
+    --border-color: #d1d9e0;
+    --light-bg: #f6f8fa;
+    --body-text: #111;
+ }
+
  div {
     box-sizing: border-box;
  }
@@ -16,7 +22,7 @@
 body {
     margin: 0;
     font-family: monospace;
-    color: #111;
+    color: var(--body-text);
 }
 
 .site-container {
@@ -58,12 +64,12 @@ a, button, input[type=submit] {
     display: inline-block;
     align-self: flex-start;
     padding: 4px 12px;
-    border: 1px solid;
+    border: 1px solid var(--border-color);
     border-radius: 21px;
     font-family: inherit;
     font-size: 16px;
-    background-color: transparent;
-    color: #111;
+    background-color: var(--light-bg);
+    color: var(--body-text);
     text-decoration: none;
     cursor: pointer;
     transition: background-color .2s;
@@ -82,8 +88,11 @@ a, button, input[type=submit] {
     height: 22px;
     object-fit: contain;
 }
+.btn-icon svg {
+    transition: fill .2s ease;
+}
 .btn-icon:hover svg {
-    fill: blue;
+    fill: #6767e1;
 }
 /******************************
 *
@@ -94,10 +103,16 @@ a, button, input[type=submit] {
 *******************************/
 input, textarea {
     appearance: none;
-    border: 1px solid;
+    border: 1px solid var(--border-color);
     padding: 8px;
     font-family: inherit;
     font-size: 16px;
+    transition: background-color .2s ease;
+}
+
+:is(input, textarea):focus {
+    outline: none;
+    background-color: var(--light-bg);
 }
 
 form.button_to {
@@ -117,7 +132,7 @@ form.button_to {
 .form-default input:not([type=submit]) {
     padding: 8px 0;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--border-color);
 }
 .form-default textarea {
     field-sizing: content;
@@ -135,56 +150,65 @@ form.button_to {
 /******************************
 *
 *
-* Cards
+* Task Index
 *
 *
 *******************************/
-.card-container {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(3, 1fr);
-}
-.card {
+.task {
     position: relative;
-    border: 1px solid;
-    border-radius: 12px;
-    height: 200px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color .2s;
     overflow: hidden;
 }
 
-.card .task-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 21px 16px;
-    border: none;
-    border-radius: inherit;
-    box-sizing: border-box;
+.task:hover {
+    background-color: var(--light-bg);
 }
 
-.card .task-title h2 {
+.task h2 {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.card .action-wrapper {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    padding: 6px 12px;
-    text-align: right;
-    transition: transform .2s .2s;
+.task-title {
+    width: calc(100% - 99px);
+    padding: 12px 0;
+    border: none;
+    background-color: transparent !important;
 }
 
-.card:hover .action-wrapper {
-    transform: translateY(-100%);
+.task .actions {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding-block: 12px;
+}
+
+.task .actions :is(.btn-icon, .button_to) {
+    transition: transform .2s ease;
+}
+
+.task:hover .actions :is(.btn-icon, .button_to) {
+    transform: translateY(calc(-100% - 24px));
+}
+.task:hover .actions .button_to .btn-icon {
+    transform: none;
+}
+
+.task .actions .btn-icon:nth-child(2) {
+    transition-delay: .2s;
+}
+.task .actions .button_to {
+    transition-delay: .4s;
 }
 
 /******************************
