@@ -198,10 +198,12 @@ form.button_to {
 }
 
 .task .actions :is(.btn-icon, .button_to) {
-    transition: transform .2s ease;
+    opacity: 0;
+    transition: transform .2s ease, opacity .8s ease;
 }
 
 .task:hover .actions :is(.btn-icon, .button_to) {
+    opacity: 1;
     transform: translateY(calc(-100% - 24px));
 }
 .task:hover .actions .button_to .btn-icon {
