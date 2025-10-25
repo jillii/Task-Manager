@@ -9,6 +9,10 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+ div {
+    box-sizing: border-box;
+ }
+
 body {
     margin: 0;
     font-family: monospace;
@@ -136,7 +140,38 @@ form.button_to {
     grid-template-columns: repeat(3, 1fr);
 }
 .card {
-    padding: 21px 16px;
+    position: relative;
     border: 1px solid;
     border-radius: 12px;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card .task-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 21px 16px;
+    border: none;
+    border-radius: inherit;
+    box-sizing: border-box;
+}
+
+.card .action-wrapper {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 6px 12px;
+    text-align: right;
+    transition: transform .2s .2s;
+}
+
+.card:hover .action-wrapper {
+    transform: translateY(-100%);
 }

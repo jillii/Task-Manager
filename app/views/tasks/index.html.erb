@@ -6,10 +6,14 @@
             <div class="card-container">
                 <% @tasks.each do |task| %>
                     <div class="card">
-                        <% if task.title %>
-                            <h2><%= task.title %></h2>
+                        <%= link_to task_path(task), class: 'task-title' do %>
+                            <% if task.title %>
+                                <h2><%= task.title %></h2>
+                            <% end %>
                         <% end %>
-                        <%= render 'actions', task: task %>
+                        <div class="action-wrapper">
+                            <%= render 'actions', task: task %>
+                        </div>
                     </div>
                 <% end %>
             </div>
