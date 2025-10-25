@@ -46,7 +46,7 @@ section {
 *
 *******************************/
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
+    margin: 0;
 }
 
 p {
@@ -171,7 +171,6 @@ form.button_to {
 
 .task h2 {
     width: 100%;
-    margin-bottom: 0;
     font-size: 18px;
     font-weight: 400;
     white-space: nowrap;
