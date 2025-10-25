@@ -1,9 +1,9 @@
-<%= form_with model: @task do |form| %>
-    <div>
+<%= form_with model: @task, class: 'form-default' do |form| %>
+    <div class="input">
         <%= form.label :title %>
         <%= form.text_field :title %>
     </div>
-    <div>
+    <div class="input">
         <%= form.label :detail %>
         <%= form.textarea :detail %>
     </div>

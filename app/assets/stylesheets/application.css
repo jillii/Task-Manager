@@ -8,3 +8,124 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+    margin: 0;
+    font-family: monospace;
+    color: #111;
+}
+
+.site-container {
+    width: min(90%, 1100px);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+section {
+    padding-block: clamp(33px, 6vw, 91px);
+}
+
+/******************************
+*
+*
+* Typography
+*
+*
+*******************************/
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+/******************************
+*
+*
+* Buttons & Links
+*
+*
+*******************************/
+a, .button_to button, input[type=submit] {
+    appearance: none;
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border: 1px solid;
+    border-radius: 21px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: transparent;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+:is(a, .button_to button, input[type=submit]):hover {
+    background-color: #e6e6e6;
+}
+:is(a, .button_to button, input[type=submit]):active {
+    background-color: #d8d8d8;
+}
+/******************************
+*
+*
+* Forms
+*
+*
+*******************************/
+input, textarea {
+    appearance: none;
+    border: 1px solid;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+form.button_to {
+    display: inline-block;
+}
+
+.form-default {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form-default .input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form-default input:not([type=submit]) {
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid;
+}
+.form-default textarea {
+    field-sizing: content;
+    min-height: 3rem;
+}
+
+.search {
+
+}
+/******************************
+*
+*
+* Cards
+*
+*
+*******************************/
+.card-container {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card {
+    padding: 21px 16px;
+    border: 1px solid;
+    border-radius: 12px;
+}
