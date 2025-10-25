@@ -168,6 +168,12 @@ form.button_to {
     box-sizing: border-box;
 }
 
+.card .task-title h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card .action-wrapper {
     position: absolute;
     top: 100%;
