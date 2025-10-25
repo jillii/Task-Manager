@@ -94,6 +94,11 @@ a, button, input[type=submit] {
 .btn-icon:hover svg {
     fill: #6767e1;
 }
+
+.button_to:has(.btn-icon) {
+    display: inline-flex;
+    align-items: center;
+}
 /******************************
 *
 *
