@@ -1,0 +1,21 @@
+<section>
+    <div class="site-container">
+        <h1>Task Index</h1>
+        <% if @tasks.present? %>
+            <% @tasks.each do |task| %>
+                <div class="card">
+                    <% if task.title %>
+                        <h2><%= task.title %></h2>
+                    <% end %>
+                    <div class="actions">
+                        <%= link_to 'View', task_path(task) %>
+                        <%= link_to 'Edit', edit_task_path(task) %>
+                        <%= button_to 'Delete', task_path(task), method: :delete %>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <p class="error">No tasks found.</p>
+        <% end %>
+    </div>
+</section>

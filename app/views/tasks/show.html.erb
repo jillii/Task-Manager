@@ -1,0 +1,9 @@
+<section>
+    <div class="site-container">
+        <%= link_to 'Back', tasks_path %>
+        <h1><%= @task.title %></h1>
+        <p><%= @task.detail %></p>
+        <%= link_to 'Edit', edit_task_path(@task) %>
+        <%= button_to 'Delete', task_path(@task), method: :delete, %>
+    </div>
+</section>
