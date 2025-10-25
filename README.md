@@ -1,24 +1,11 @@
 # README
+This is a lightweight Rails app in which users can view, add, edit, delete, and search tasks. Each task consists of a title and detail text.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+- Clone this repo
+- Run `rails db:migrate`
+- Run `rails s`
+- Visit localhost:3000 in your browser (or whatever port you specify in the above step)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Usage
+Start adding tasks! Find the 'Add' button on the homepage. Create tasks by adding a title and details. 
