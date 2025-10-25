@@ -1,7 +1,12 @@
 class TasksController < ApplicationController
   # GET /tasks
   def index
-    @tasks = Task.all
+    query = params[:search]
+    if (query.present?)
+      @tasks = Task.where("title LIKE ? OR detail LIKE ?", "%#{query}%", "%#{query}%")
+    else
+      @tasks = Task.all
+    end
   end
 
   # GET /tasks/:id

@@ -1,6 +1,7 @@
 <section>
     <div class="site-container">
         <h1>Task Index</h1>
+        <%= render 'search' %>
         <% if @tasks.present? %>
             <% @tasks.each do |task| %>
                 <div class="card">
