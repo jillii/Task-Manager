@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  # POST /products
+  # POST /tasks
   def create
     @task = Task.new(task_params)
 
