@@ -3,6 +3,7 @@ This is a lightweight Rails app in which users can view, add, edit, delete, and 
 
 ## Installation
 - Clone this repo
+- `cd` into the new directory and run `bundle install`
 - Run `rails db:migrate`
 - Run `rails s`
 - Visit localhost:3000 in your browser (or whatever port you specify in the above step)
